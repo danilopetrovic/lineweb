@@ -1,0 +1,468 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background: #CCC url(../images/background.png);
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	/*font-size: 0.95em;*/
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0.3em 0 0.5em;
+}
+h1 {font-size: 26px;}
+h2 {font-size: 24px;}
+h2:hover {
+	animation: .8s promena_h2 ease-out alternate 2;
+	/*traje 0.8s,
+	promena se zove animacija koja je definisana u @keyframes,
+	linearno umesto ease,
+	alternate je da ide u oba smera,
+	infinite da traje beskonacno ponavljanja*/
+}
+@keyframes promena_h2 {
+	100% {
+		padding-left: 10px;
+		color: red;
+	}
+}
+h3 {font-size: 20px;}
+h4 {font-size: 19px;}
+h5 {font-size: 18px;}
+h6 {font-size: 17px;}
+a:link,
+a:visited {
+	color: #921113;
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+a:active {
+	color: #B3B73A;
+	text-decoration: none;
+}
+
+.cl:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 1200px;
+	background-color: #FFF;
+	box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.4);
+}
+
+#header {
+	background-color: #921113;
+}
+#logo {
+	/* display: block; */
+	float: left;
+	border-right: 1px solid rgba(159,159,159,0.60);
+	margin-right: 10px;
+}
+#logo:hover img{ /*kada hoverujem logo div onda se slika img u njemu okrece*/
+	animation: 2s promena2 linear infinite;
+}
+@keyframes promena2 {
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+img {
+	max-width: 100%; /*slika je maksimalno 100% a ako ne prelazi div znaci da ima svoju dimenziju!!! skuplja se ako se skuplja njen div*/
+	vertical-align: bottom; /* i ovo brise donji prostor */
+}
+#nav {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+}
+#nav ul {
+	list-style: none; /*ubija tacku*/
+	padding: 0;
+	margin: 0; /*ubija gornju marginu da bi se lepo podigao meni*/
+}
+#nav ul li {
+	float: left;
+	position: relative;
+}
+#nav ul li a {
+	padding: 0 20px;
+	height: 80px; /*ovo i ne moram da postavim radi i bez njega*/
+	line-height: 80px; /* postavlja liniji visinu pa vertikalno centrira text */
+	display: block; /* inline element a pretvori u blok */
+	transition:  0.8s color linear, 0.4s background ease;
+}
+#nav ul li a:link,
+#nav ul li a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+#nav ul li a:hover {
+	color: #000;
+	background-color: #AAA;
+}
+#nav ul li a:active {
+	background-color: #777;
+	transition: none;
+}
+#front {
+	position: relative;
+	border-top: 5px solid #555;
+	border-bottom: 5px solid #555;
+}
+.front-over {
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	transition: 0.5s all ease;
+}
+.front-over:hover {
+	bottom: 0; /*vratih poziciju na nulu donji desni cosak pa sam stavio veci padding da ne moras misem da pratis sliku dok se pomera...*/
+	right: 0;
+	padding: 0 120px 80px 0;
+	transition: 3s all ease;
+}
+
+#main, #sidebar {
+	float: right;
+}
+#main {
+	width: 840px;
+	padding: 15px;
+	float: left;
+}
+#main .block h2 { /* gadjao sam u .block h2 da nebi imao donju liniju na drugim stranicama van index.html koje nemaju block*/
+	border-bottom: 5px solid #921113;
+	text-transform: uppercase;
+}
+#main img {
+	float: right;
+}
+#main #intro {
+	padding-right: 250px; /* fora sa padding-om ostavlja prazan prostor za sliku dobro za responsive sajtove */
+}
+#main .article img {
+	float: left;
+	margin: 5px 14px 2px 0;
+}
+#main .article p {
+	margin-top: 0; /* mogao sam na sliku da stavim i padding-top: 10px pa da ne ubijam paragrafu marginu da bi se izjednacili na isti nivo paragraf i slika */
+}
+#main .article {
+	float: left;
+	width: 400px;
+	color: #555;
+}
+#main .article:nth-of-type(2n) {
+	margin-left: 40px;
+}
+#sidebar {
+	padding: 15px;
+	width: 300px;
+	background-color: #DDD;
+}
+#sidebar .block h2 { /* gadjao sam u .block h2 da nebi imao donju liniju na drugim stranicama van index.html koje nemaju block*/
+	border-bottom: 5px solid #AAA;
+	text-transform: uppercase;
+}
+#sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#sidebar ul li{
+	float: left;
+	margin: 5px;
+}
+#sidebar ul li a{
+	padding: 4px;
+	text-transform: capitalize;
+	
+}
+#sidebar ul li a:link,
+#sidebar ul li a:visited {
+	color: #FFF;
+	background-color: #777;
+	text-decoration: none;
+	transition: 1.2s all ease;
+}
+#sidebar ul li a:hover {
+	background-color: #921113;
+	transition: 0.3s all ease;
+}
+#sidebar ul li a:active {
+	color: #000;
+}
+#sidebar img {
+	margin-top: 30px;
+}
+#footer {
+	text-align: center;
+	background-color: #FFF;
+	clear: both;
+	margin: 0 0 30px; /* ostavlja na dnu stranice malo vise prostora da nebi bio footer slepljen za dno stranice tj tu da se zavrsi stranica... */
+	padding: 5px;
+	border-top: 5px solid #C4C4C4;
+}
+#footer p {
+	margin: 0; /* bude preveliki footer kada paragraf ima margine*/
+}
+
+/*php stilizacije pocetak ----------------------------------------------------------------*/
+
+.slikavesti {
+	max-width: 300px;
+	max-height: 300px;
+	padding-left: 10px;
+}
+.malaslikavesti {
+	max-width: 250px;
+	max-height: 70px;
+}
+#main form img {
+	float: none;
+	max-width: 300px;
+	max-height: 300px;
+}
+#kategorije {
+	background-color: #DDD;
+	padding: 0;
+	margin: 0;
+	height: 35px;
+}
+#kategorije a {
+	min-width: 30px;
+	text-align: center;
+	padding: 5px;
+	margin-right: 5px;
+	border: 1px solid black;
+	float: left;
+}
+#kategorije a:hover {
+	background-color: #888;
+}
+#divpretraga {
+	padding: 4px;
+	margin: 0;
+	float: right;
+	align-self: center;
+}
+#nav ul li ul {
+	background-color: #921113;
+	position: absolute;
+	top:80px;
+	left: 0;
+	display: none; /* u startu sakriveno */
+	font-size: 16px;
+	text-align: center;
+	padding: 0;
+}
+#nav ul li ul a{
+	width:100px;
+	padding: 0;
+	height: 40px; /*ovo i ne moram da postavim radi i bez njega*/
+	line-height: 40px; /* postavlja liniji visinu pa vertikalno centrira text */
+}
+#nav ul li ul a:hover{
+	color: green;
+	transition:  none;
+}
+
+#nav ul li:hover > ul {
+	display: block; /* kada se otvori padajuci */ 
+}
+.linkclass {
+	background-color:#EEE;
+	border-radius:3px;
+	padding:0 3px;
+}
+/*php stilizacije kraj* ----------------------------------------------------------------/
+
+
+/*manji ekrani racunara*/
+@media screen and (min-width:1024px) and (max-width:1260px){
+	#wrapper {
+		width: 960px;
+	}
+	#main {
+		width: 600px;
+	}
+	#main .article {
+		width: 290px;
+	}
+	#main .article:nth-of-type(2n) {
+	margin-left: 20px;
+	}
+}
+/*tablet racunari*/
+@media screen and (min-width:768px) and (max-width:1023px){
+	#wrapper {
+		width: 98%;
+	}
+	#logo {
+		float: none;
+		text-align: center;
+		border-right: none; /* ubio sam desnu crtu i dodao sam je dole*/
+		border-bottom: 1px solid rgba(159,159,159,0.60);
+		margin-right: 0; /*ubio sam marginu koja je odvajala nav od logoa sa borderom*/
+	}
+	#nav {
+		float: none;
+		text-align: center; /*ovo radi zato sto smo stavili li elementu display:inline-block*/
+	}
+	#nav ul li {
+		float: none;
+		display: inline-block; /*140min 7-8 dreamweaver predavanje (li je po defaultu blok! Ubili smo mu float ali onda padaju jedni ispod drugog! kada stavim display:inline-block svojstvo onda je u isto vreme i inline i block i onda celom divu #nav mogu da stavim text-align:center da bih centrirao blok elemente!!!)*/
+	}
+	#nav ul li a {
+	padding: 0 20px;
+	height: 80px; /*ovo i ne moram da postavim radi i bez njega*/
+	line-height: 80px; /* postavlja liniji visinu pa vertikalno centrira text */
+	display: block; /* inline element a pretvori u blok */
+	font-weight: bold;
+	max-width: 100%;
+	}
+	.front-over {
+		width: 250px;
+		bottom: 10px;
+		right: 10px;
+	}
+	#main {
+		padding: 1%;
+		width: 75%;
+	}
+	#sidebar {
+		padding: 1%;
+		width: 20%;
+	}
+	#main #intro {
+	padding-right: 0;
+	}
+	#main .block:first-of-type img {
+		width: 200px;
+	}
+	#main .article {
+		float: none;
+		width: auto;
+		overflow: hidden; /*ovim sprecavam da vesti upadaju jedna u drugu! Upadaju zato sto su bile floatovane pa su prepoznavale jedna drugu, a kada sam skinuo float da bi isle jedna ispod druge prestaju da se prepoznaju jer je mala slika u artiklu floatovana pa article roditelj ne prepoznaje svoji div i onda upada text iz sledeceg diva u article div.....*/
+	}
+	#main .article:nth-of-type(2n) {
+	margin: 0;
+	}
+}
+/*mobilni telefoni i manji tablet racunari*/
+@media screen and (max-width:767px){
+	#wrapper {
+		width: 98%;
+	}
+	#logo {
+		float: none;
+		text-align: center;
+		border-right: none; /* ubio sam desnu crtu i dodao sam je dole*/
+		border-bottom: 1px solid rgba(159,159,159,0.60);
+		margin-right: 0; /*ubio sam marginu koja je odvajala nav od logoa sa borderom*/
+	}
+	#nav {
+		float: none;
+		text-align: center; /*ovo radi zato sto smo stavili li elementu display:inline-block*/
+		font-size: 16px;
+	}
+	#nav ul li {
+		float: none;
+	}
+	#front {
+		display: none;
+	}
+	#main,
+	#sidebar {
+		float: none;
+		width: auto;
+		padding: 10px;
+	}
+	#main #intro {
+	padding-right: 0;
+	}
+	#main .block:first-of-type img {
+		float: none; /*da slika ide iznad texta*/
+	}
+	#main .article {
+		float: none;
+		width: auto;
+		overflow: hidden; /*ovim sprecavam da vesti upadaju jedna u drugu! Upadaju zato sto su bile floatovane pa su prepoznavale jedna drugu, a kada sam skinuo float da bi isle jedna ispod druge prestaju da se prepoznaju jer je mala slika u artiklu floatovana pa article roditelj ne prepoznaje svoji div i onda upada text iz sledeceg diva u article div.....*/
+	}
+	#main .article:nth-of-type(2n) {
+	margin: 0;
+	}
+	/* ovde ispod ide ono sto sam dodao za php */
+	#nav ul li ul {
+		position: static; /* ubija position svojstvo resetuje position da nebi letela navegacija tamo negde...*/
+		background-color: #924413;
+		display: block;
+		font-size: 16px;
+		text-align: center;
+	}
+	#nav ul li ul a{
+		width:auto;
+		height: 40px; /*ovo i ne moram da postavim radi i bez njega*/
+		line-height: 40px; /* postavlja liniji visinu pa vertikalno centrira text */
+	}
+	#nav ul li ul a:hover{
+		transition:  none;
+	}
+}
+
+
+
+/*ovo nema veze sa responsive! samo pokazuje cubic-bezier funkciju da moze d aide tempom kojim hocu..... http://cubic-bezier.com*/
+/*
+#main .block:nth-of-type(1) img {
+	transition: .8s all cubic-bezier(0,1.72,1,-0.73);
+}
+#main .block:nth-of-type(1) img:hover {
+	padding-top: 100px;
+	transition: .8s all steps(5, start);
+}
+*/
+
+#main .block:nth-of-type(1) img {
+	animation: 3s promena3 linear infinite;
+}
+@keyframes promena3 {
+	0% {
+		padding-top: 120px;
+		animation-timing-function: cubic-bezier(.25,.76,.77,.28);
+	}
+	50% {
+		padding: 0;
+		animation-timing-function: steps(4);
+	}
+	100% {
+		padding-top: 120px;
+	}
+	
+}
+
+/*mobilni telefoni i manji tablet racunari*/
+@media screen and (max-width:767px){
+		#main .block:nth-of-type(1) img {
+		animation: none;
+	}
+	h2:hover {
+		animation: none;
+	}
+	#nav ul li a {
+	transition:  none;
+	}
+	#logo:hover img{
+	animation: none;
+	}
+}

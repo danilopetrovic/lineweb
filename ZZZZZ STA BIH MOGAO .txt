@@ -1,0 +1,21 @@
+galleryId.php - svaki link moze da ima i dugme edit pa da salje na stranicu za unos slika u koje mogu da ubacim jos slika... eventualno da brisem slike i iz baze i iz fajlova!!!
+
+logout koji saljem iz navegacije u login.php preko get parametra ?LOGOUT da odradim preko js confirm dal si siguran za logout i ako nisi da obrise a href sa get parametrom ?LOGOUT kako se nebi izlogovao ako hocu da doda taj get!
+
+brisanje vesti da ima confirm isto kao i za logout....
+
+brisanje.php da izbaci gresku ako u getu napises id koji ne postoji! probao sam sa mysqli_error i sa mysqli_num_rows
+
+dodaj sql upit u administrativnom panelu obrisane vesti kojem ima pristup samo administrator i da moze da menja iz obrisano u vraceno!!!
+
+addgallery.php - mogao bih kroz js da confirmujem snimite galeriju i ok za confirm a da u isto vreme proverava da li postoji taj naziv
+
+izmeni lozinku da ne moze user da promeni nekom drugom lozinku
+
+obrisikorisnika.php treba da pravi log fajl koji administrator je obrisao kojeg korisnika....
+
+kada se korisnik uloguje da login promeni naziv u js na options...
+
+u pretrazi bi trebao da radi space
+
+ne radi mi paging kada izaberem kategoriju
